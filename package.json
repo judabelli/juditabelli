@@ -1,0 +1,7 @@
+{
+  "name": "juditabelli",
+  "version": "0.0.1",
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/main.scss  css/main.css"
+  }
+}
