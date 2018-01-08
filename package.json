@@ -1,7 +1,44 @@
 {
-  "name": "juditabelli",
+  "name": "juditabelli.com",
   "version": "0.0.1",
   "scripts": {
     "build-css": "node-sass --include-path scss scss/main.scss  css/main.css"
-  }
+  },
+  "description": "Personal website of Judit abelli Salvador. Frontend developer and Web Designer.",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.14.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.4",
+    "buble": "^0.18.0",
+    "node-requirejs": "^0.1.1",
+    "oldie": "^1.3.0",
+    "postcss": "^6.0.16",
+    "scrollmagic": "^2.0.5",
+    "webpack": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/judabelli/juditabelli.git"
+  },
+  "keywords": [
+    "frontend",
+    "developer",
+    "web",
+    "designer",
+    "girona",
+    "artists",
+    "freelance"
+  ],
+  "author": {
+    "name": "Judit Abelli Salvador",
+    "email": "jud.abelli@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/judabelli/juditabelli/issues"
+  },
+  "homepage": "https://github.com/judabelli/juditabelli#readme"
 }
