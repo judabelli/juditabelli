@@ -1,62 +1,31 @@
-const path = require('path');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
-module.exports = [{
-  devtool: 'cheap-module-source-map',
-  entry: './material/components/main.js',
-  output: {
-    path: path.resolve(__dirname, './site/js'),
-    filename: 'design-system.js',
-    sourceMapFilename: 'design-system.map'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'buble-loader'
-        }
-      }
-    ]
-  },
-  plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled',
-      defaultSizes: 'parsed',
-      generateStatsFile: true,
-      statsOptions: {chunkModules: true},
-      statsFilename: 'design-system.json',
-      logLevel: 'info'
-    })
-  ]
-},
-  {
-    devtool: 'cheap-module-source-map',
-    entry: './material/components/c-favorites/data-js-api.js',
+module.exports = {
+    entry: ["./global.js", "./app.js"],
     output: {
-      path: path.resolve(__dirname, './site/js'),
-      filename: 'sundio-favorites.js',
-      sourceMapFilename: 'sundio-favorites.map'
+        filename: "bundle.js"
     },
     module: {
-      rules: [
-        {
-          test: /\.js$/,
-          use: {
-            loader: 'buble-loader'
-          }
-        }
-      ]
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'jshint-loader'
+
+            }
+        ],
+        loaders: [
+            {
+                test: [/\.jsx?$/, /\.js$/, /\.es6$/],
+                exclude: '/node_modules',
+                loader: 'babel-loader',
+                query : {
+                    presets: ["es2015", "stage-0", "react"],
+                }
+            }
+        ]
     },
-    plugins: [
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'disabled',
-        defaultSizes: 'parsed',
-        generateStatsFile: true,
-        statsOptions: { chunkModules: true },
-        statsFilename: 'sundio-favorites.json',
-        logLevel: 'info'
-      })
-    ]
-  }
-];
+    resolve: {
+        // Resolve: Lets us specify what kind of file types we can process without specifically giving
+        // a file extension.
+        extensions: ['.js', '.es6']
+    }
+}
