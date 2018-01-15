@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
 
 @import '_variables';
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Monts errat', sans-serif;
   font-size: 14px;
   color: $body__font-color;
 }
@@ -20,6 +18,7 @@ h6 {
   width:100%;
 }
 
+
 section {
   height: 100vh;
   display: flex;
@@ -27,8 +26,12 @@ section {
   align-content: center;
   flex-wrap: wrap;
   width: 100%;
+
 }
 
+ul {
+  padding-left:0;
+}
 li {
   list-style-type: none;
 }
@@ -39,13 +42,26 @@ a {
 }
 
 
+.container__main {
+  width:100%;
+  max-width: 1392px;
+  margin: 0 auto;
+}
+
 .wrapper__main {
   padding: 10px;
 }
 
 .menu__main--wrapper {
-  display:flex;
-  float: right;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  @media all and (max-width: 800px) {
+    justify-content: space-around;
+  }
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+  }
 }
 
 .menu__main--item {
@@ -54,6 +70,5 @@ a {
 
 
 .site__name {
-  font-family: 'Permanent Marker', cursive;
   font-size: 5rem;
 }

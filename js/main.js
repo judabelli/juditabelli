@@ -1,24 +1,21 @@
+$(document).ready(function() {
+    $('a[href*=\\#]').each(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+            && location.hostname == this.hostname
+            && this.hash.replace(/#/,'') ) {
+            var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+            var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+            if ($target) {
+                var targetOffset = $target.offset().top;
 
-// init controller
-var controller = new ScrollMagic.Controller();
+                $(this).click(function() {
+                    $("#nav li a").removeClass("active");
+                    $(this).addClass('active');
+                    $('html, body').animate({scrollTop: targetOffset}, 1000);
+                    return false;
+                });
+            }
+        }
+    });
 
-new ScrollMagic.Scene({
-    duration: 800,
-    offset: 50
-})
-    .setPin("#wrapper") // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller
-
-
-
-controller.scrollTo(function (newpos) {
-    TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
 });
-
-$(document).on("click", "a[href^='#']", function(e) {
-    var id = $(this).attr("href");
-    e.preventDefault();
-    controller.scrollTo(id);
-});
-
-
