@@ -1,31 +1,36 @@
+var webpack = require('webpack');
+var path = require('path');
+
 module.exports = {
-    entry: ["./global.js", "./app.js"],
+    entry: {
+        "javascript" : ["./js/main.js"],
+        "styles" : ["./scss/main.scss"]
+    },
     output: {
-        filename: "bundle.js"
+        // Webpack prefers an absolute path:
+        path: path.resolve(__dirname, './dist'),
+        filename: 'main.js'
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'jshint-loader'
-
-            }
-        ],
-        loaders: [
-            {
-                test: [/\.jsx?$/, /\.js$/, /\.es6$/],
-                exclude: '/node_modules',
-                loader: 'babel-loader',
-                query : {
-                    presets: ["es2015", "stage-0", "react"],
-                }
+                // Uses regex to test for a file type - in this case, ends with `.css`
+                test: /\.scss$/,
+                // Apply these loaders if test returns true
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            includePaths: [
+                                path.resolve("./node_modules/bootstrap-sass/assets/stylesheets")
+                            ]
+                        }
+                    }
+                ]
             }
         ]
-    },
-    resolve: {
-        // Resolve: Lets us specify what kind of file types we can process without specifically giving
-        // a file extension.
-        extensions: ['.js', '.es6']
     }
 }

@@ -1,11 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
 
+@font-face {
+  font-family: 'rottarity_feminine_alternatRg';
+  src: url('../fonts/rottarity_fenimine_alternative-webfont.woff2') format('woff2'),
+  url('../fonts/rottarity_fenimine_alternative-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
 @import '_variables';
 
 body {
-  font-family: 'Monts errat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: $body__font-color;
+  margin:0;
+  padding:0;
+  * {
+    box-sizing: border-box;
+  }
 }
 
 h1,
@@ -42,20 +57,70 @@ a {
 }
 
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.header__main {
+  z-index:1;
+  a {
+    color: #333;
+  }
+  &.sticky {
+    position:fixed;
+    background:white;
+    width:100%;
+    top:0;
+    left:0;
+    Z-INDEX: 9;
+    padding-right:10px;
+    padding-left:10px;
+  }
+}
+
 .container__main {
   width:100%;
   max-width: 1392px;
   margin: 0 auto;
+  z-index:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .wrapper__main {
   padding: 10px;
 }
 
+.title__main{
+  font-family: 'rottarity_feminine_alternatRg';
+  font-size: 3rem;
+  &::before {
+    content: "*";
+    font-family: Verdana;
+    display:inline-block;
+    margin-right: 5px;
+    color: #af005f;
+  }
+}
 .menu__main--wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
+  width:100%;
   @media all and (max-width: 800px) {
     justify-content: space-around;
   }
@@ -70,5 +135,78 @@ a {
 
 
 .site__name {
+  font-family: 'rottarity_feminine_alternatRg';
+  font-family: 'rottarity_feminine_alternatRg';
   font-size: 5rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+}
+
+.cover {
+  background-image: url(../img/girona-1.jpg);
+  position: relative;
+  color:white;
+  -webkit-clip-path: circle(24.3% at 50% 50%);
+  clip-path: circle(24.3% at 50% 50%);
+  width:100%;
+  height:100%;
+  position:absolute;
+  &::after {
+    content:'';
+    display:block;
+    background-color: #af005f;
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index:0;
+  }
+
+}
+
+
+.formulario {
+  width: 100%;
+  max-width: 500px;
+> * {
+    width:100%;
+    display: block;
+    margin: 5px 0;
+  padding:10px;
+  border-radius:8px;
+  border-color:transparent;
+  background: #333;
+  color:white;
+  }
+}
+input[type=submit] {
+  background-color:#af005f;
+}
+
+
+.member-grid {
+  display:flex;
+  flex-wrap:wrap;
+  margin: 0 auto;
+}
+
+.member {
+  flex: 1 0 0;
+  -webkit-clip-path: circle(24.3% at 50% 50%);
+  clip-path: circle(24.3% at 50% 50%);
+  background-size:cover;
+  max-width:300px;
+  img {
+    visibility: hidden;
+    max-height:500px;
+  }
+}
+
+
+.judit {
+  background-image: url(../img/judit.jpg);
 }
