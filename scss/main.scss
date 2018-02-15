@@ -1,3 +1,5 @@
+@import 'utilities/_mixins';
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
 
 @font-face {
@@ -41,6 +43,10 @@ section {
   align-content: center;
   flex-wrap: wrap;
   width: 100%;
+  padding:20px;
+  @include tablet {
+    padding:0;
+  }
 
 }
 
@@ -117,6 +123,10 @@ a {
     display:inline-block;
     margin-right: 5px;
     color: #af005f;
+  }
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: inherit;
   }
 }
 .menu__main--wrapper {

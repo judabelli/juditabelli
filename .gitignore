@@ -10,6 +10,9 @@ npm-debug.log
 # Bower Components
 bower_components/
 
+# Node Modules
+node_modules/
+
 # Sass/Scss Cache
 .sass-cache/
 

@@ -28,7 +28,11 @@ section {
   justify-content: flex-start;
   align-content: center;
   flex-wrap: wrap;
-  width: 100%; }
+  width: 100%;
+  padding: 20px; }
+  @media (min-width: 768px) {
+    section {
+      padding: 0; } }
 
 ul {
   padding-left: 0; }
@@ -96,6 +100,10 @@ a {
     display: inline-block;
     margin-right: 5px;
     color: #af005f; }
+  @media (min-width: 768px) {
+    .title__main {
+      font-size: 1.5rem;
+      line-height: inherit; } }
 
 .menu__main--wrapper {
   display: flex;

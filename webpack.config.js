@@ -1,36 +1,54 @@
-var webpack = require('webpack');
-var path = require('path');
+var path = require("path");
+var webpack = require("webpack");
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+
 
 module.exports = {
-    entry: {
-        "javascript" : ["./js/main.js"],
-        "styles" : ["./scss/main.scss"]
-    },
+    context: path.resolve(__dirname, 'src'),
+    entry: [
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+        './index.js'
+    ],
     output: {
-        // Webpack prefers an absolute path:
-        path: path.resolve(__dirname, './dist'),
-        filename: 'main.js'
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/build',
+        filename: "bundle.js"
     },
-    module: {
-        rules: [
-            {
-                // Uses regex to test for a file type - in this case, ends with `.css`
-                test: /\.scss$/,
-                // Apply these loaders if test returns true
-                use: [
-                    {
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            includePaths: [
-                                path.resolve("./node_modules/bootstrap-sass/assets/stylesheets")
-                            ]
-                        }
-                    }
+
+    devServer: {
+        hot: true,
+        contentBase: path.resolve(__dirname, 'build'),
+        publicPath: '/',
+    },
+
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.NoErrorsPlugin(), not needed any more
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                context: __dirname,
+                postcss: [
+                    autoprefixer
                 ]
+            }
+        })
+    ],
+    module: {
+        rules: [{
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loaders: ['babel-loader']
+        },
+            {
+                test: /\.s?css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader' , 'postcss-loader']
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+                loader: 'url-loader?limit=10000',
             }
         ]
     }
-}
+};
