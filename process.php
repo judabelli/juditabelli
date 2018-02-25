@@ -19,6 +19,7 @@ if(isset($_POST['subject']))
 else
 	$subject= "Not entered";
 
+	
 try {
 	$username = 'qzf281';
 	$password = 'Colacao9';
@@ -27,23 +28,25 @@ try {
 	
 	$stmt = $pdo->prepare('INSERT INTO CONTACT_MESSAGE (EMAIL, NAME, SURNAMES, MESSAGE) VALUES(:email, :name, :surnames, :message)');
 	$stmt->execute(array(
-			':email' => $mail,
-			':name' => $firstname,
-			':surnames' => $lastname,			
-			':message' => $subject
+				':email' => $mail,
+				':name' => $firstname,
+				':surnames' => $lastname,
+				':message' => $subject
 	));
-	
+		
 	# Affected Rows?
 	echo $stmt->rowCount(); // 1
 } catch(PDOException $e) {
 	echo 'Error: ' . $e->getMessage();
-	
-	
-
+		
+}
+		
 function sanitizeString($var)
-{	
+{
 	$var = stripslashes($var);
 	$var = htmlentities($var);
 	$var = strip_tags($var);
 	return $var;
 }
+		
+		
