@@ -27,7 +27,7 @@ $(document).ready(function() {
     	    mail = $form.find( "input[name='mail']" ).val(),
     	    firstname = $form.find( "input[name='firstname']" ).val(),
     	    lastname = $form.find( "input[name='lastname']" ).val(),
-    	    subject = $form.find( "input[name='subject']" ).val(),
+    	    subject = $form.find( "textarea[name='subject']" ).val(),
     	    url = "process.php";    	 
     	// Send the data using post
     	var posting = $.post( url, { firstname: firstname, 
