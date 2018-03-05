@@ -1,0 +1,10 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: $body__font-color;
+  margin:0;
+  padding:0;
+  * {
+    box-sizing: border-box;
+  }
+}

@@ -10,61 +10,73 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>   
 </head>
 <body>
 <div class="wrapper__main" id="wrapper">
-    <section class="section__main cover" >
-        <header class="header__main" >
-            <nav class="menu__main">
-                <ul class="menu__main--wrapper">
-                    <li class="menu__main--item"><a href="#section__about" class="menu__main--link">Nosotras</a></li>
-                    <li class="menu__main--item"><a href="#section__wedo" class="menu__main--link">El objetivo</a></li>
-                    <li class="menu__main--item"><a href="#section__why" class="menu__main--link">Somos digital </a></li>
-                    <li class="menu__main--item"><a href="#section__wedont" class="menu__main--link">No somos </a></li>
-                    <li class="menu__main--item"><a href="#section__members" class="menu__main--link">Miembros </a></li>
-                </ul>
-            </nav>
-        </header>
+    <header class="header__main" >
+        <nav class="menu__main">
+            <ul class="menu__main--wrapper">
+                <li class="menu__main--item"><a href="#section__about" class="menu__main--link">Nosotras</a></li>
+                <li class="menu__main--item"><a href="#section__wedo" class="menu__main--link">El objetivo</a></li>
+                <li class="menu__main--item"><a href="#section__why" class="menu__main--link">Somos digital </a></li>
+                <li class="menu__main--item"><a href="#section__wedont" class="menu__main--link">No somos </a></li>
+                <li class="menu__main--item"><a href="#section__members" class="menu__main--link">Miembros </a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section__main " >
+        <div class="cover_bk"></div>
+        <div class="cover"></div>
         <div class="container__main">
             <h1 class="site__name">Femme inline</h1>
-            <h2 class="site__slogan">Comunidad de mujeres</h2>
+            <!--<h2 class="site__slogan">Comunidad de mujeres</h2>-->
         </div>
     </section>
     <section class="section__main" id="section__about">
-        <div class="container__main">
+        <div class="container__main ">
             <h3 class="title__main">Quiénes somos?</h3>
-            <div>FemmeInline es una comunidad de mujeres para mujeres. Tenemos el objetivo de promover y apoyar el crecimiento del sector femenino en el ámbito digital. Para ello hemos creado una comunidad donde la tecnología y la mujer se unen como primer ideal de una cultura igualitaria y diversa.</div>
+            <div class="half">
+                <div>FemmeInline es una comunidad de mujeres para mujeres. Tenemos el objetivo de promover y apoyar el crecimiento del sector femenino en el ámbito digital. Para ello hemos creado una comunidad donde la tecnología y la mujer se unen como primer ideal de una cultura igualitaria y diversa.</div>
+            </div>
+            <div class="team-member">
+                <a href="http://demo.deliciousthemes.com/patti/wp-content/uploads/2014/03/member21.jpg" rel="prettyPhoto" title="Andrew Clark"><span class="item-on-hover" style="opacity: 0;"><span class="hover-image" style="opacity: 0;">
+                    <i class="fa fa-search"></i>
+                    <img alt="Andrew Clark" class="lazy grayscale" data-original="http://demo.deliciousthemes.com/patti/wp-content/uploads/2014/03/member21.jpg" width="380" height="288" src="http://demo.deliciousthemes.com/patti/wp-content/uploads/2014/03/member21.jpg" style="display: block;"></a><div class="team-text"><h3><span>Andrew Clark</span></h3><h6>Web Developer</h6><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p></div><div class="team-social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div></div>
         </div>
-
+       <!-- <div class="member-grid">
+            <div class="member judit"><img src="img/judit.jpg" alt=""></div>
+            <div class="member judit"><img src="img/judit.jpg" alt=""></div>
+            <div class="member judit"><img src="img/judit.jpg" alt=""></div>
+            <div class="member judit"><img src="img/judit.jpg" alt=""></div>
+        </div>
+-->
     </section>
     <section class="section__main" id="section__wedo">
         <div class="container__main">
             <h3 class="title__main">¿Qué hacemos?</h3>
-            <div>Desde FemmeInline organizaremos encuentros y talleres asequibles para poder formar más perfiles femeninos tecnológicos, además de promover el networking entre nuestras miembros. Así, creamos la posibilidad de conocer gente que cree y trabaja para conseguir la igualdad de oportunidades entre hombres y mujeres en el sector digital y la colaboración como filosofía de trabajo</div>
+            <div class="half">
+                <div>Desde FemmeInline organizaremos encuentros y talleres asequibles para poder formar más perfiles femeninos tecnológicos, además de promover el networking entre nuestras miembros. Así, creamos la posibilidad de conocer gente que cree y trabaja para conseguir la igualdad de oportunidades entre hombres y mujeres en el sector digital y la colaboración como filosofía de trabajo</div>
+            </div>
         </div>
     </section>
-
-    <section class="section__main" id="section__why">
-        <div class="container__main">
-            <h3 class="title__main">Nuestras miembros</h3>
-            <div>FemmeInline no es una organización de recruiting por lo tanto no pondremos en contacto directo a empresas con nuestras miembros. Tampoco es una empresa sinó una comunidad.</div>
-        </div>
-    </section>
-
     <section class="section__main" id="section__wedont">
         <div class="container__main">
             <h3 class="title__main">¿Qué no somos?</h3>
+                        <div class="half">
             <div>FemmeInline no es una organización de recruiting por lo tanto no pondremos en contacto directo a empresas con nuestras miembros. Tampoco es una empresa, así que somos una comunidad sin ánimo de lucro.</div>
+                        </div>
         </div>
     </section>
     <section class="section__main" id="section__members">
         <div class="container__main">
             <h3 class="title__main">Nuestras miembros</h3>
+                        <div class="half">
             <div>Cualquier persona con ganas de aprender, independientemente de la edad o género, será bienvenida en nuestros talleres y eventos. Aún así, las miembros serán sólo del sector femenino. </div>
+                        </div>
         </div>
     </section>
-
     <section class="section__main" id="contact">
         <div class="container__main">
             <h3 class="title__main">Contacta con nosotras</h3>
@@ -78,7 +90,6 @@
         </div>
     </section>
     <footer class="footer__main">
-
     </footer>
 
     <script src="js/main.js"></script>

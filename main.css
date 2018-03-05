@@ -84,7 +84,12 @@ a {
 .cover {
   background-image: url(../img/background.jpg);
   position: relative;
-  color: white; }
+  color: white;
+  position:absolute;
+  z-index:0;
+  -webkit-clip-path: circle(24.3% at 50% 50%);
+  clip-path: circle(24.3% at 50% 50%)
+}
   .cover::after {
     content: '';
     display: block;

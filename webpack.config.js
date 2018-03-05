@@ -1,31 +1,54 @@
+var path = require("path");
+var webpack = require("webpack");
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
+
+
 module.exports = {
-    entry: ["./global.js", "./app.js"],
+    context: path.resolve(__dirname, 'src'),
+    entry: [
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+        './index.js'
+    ],
     output: {
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/build',
         filename: "bundle.js"
     },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'jshint-loader'
 
+    devServer: {
+        hot: true,
+        contentBase: path.resolve(__dirname, 'build'),
+        publicPath: '/',
+    },
+
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.NoErrorsPlugin(), not needed any more
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                context: __dirname,
+                postcss: [
+                    autoprefixer
+                ]
             }
-        ],
-        loaders: [
+        })
+    ],
+    module: {
+        rules: [{
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loaders: ['babel-loader']
+        },
             {
-                test: [/\.jsx?$/, /\.js$/, /\.es6$/],
-                exclude: '/node_modules',
-                loader: 'babel-loader',
-                query : {
-                    presets: ["es2015", "stage-0", "react"],
-                }
+                test: /\.s?css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader' , 'postcss-loader']
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+                loader: 'url-loader?limit=10000',
             }
         ]
-    },
-    resolve: {
-        // Resolve: Lets us specify what kind of file types we can process without specifically giving
-        // a file extension.
-        extensions: ['.js', '.es6']
     }
-}
+};
