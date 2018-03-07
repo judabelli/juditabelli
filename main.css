@@ -59,6 +59,7 @@ a {
   font-size: 3rem; }
   .title__main::before {
     content: "*";
+    font-family: Verdana;
     display: inline-block;
     margin-right: 5px;
     color: #af005f; }
@@ -83,23 +84,30 @@ a {
 
 .cover {
   background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
   color: white;
-  position:absolute;
-  z-index:0;
-  -webkit-clip-path: circle(24.3% at 50% 50%);
-  clip-path: circle(24.3% at 50% 50%)
+  align-content: flex-start;
 }
-  .cover::after {
-    content: '';
-    display: block;
-    background-color: #af005f;
-    opacity: .4;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 0; }
+.st0{fill:#FFFFFF;}
+.logo {
+  max-width: 350px;
+}
+
+
+.title__landing {
+  font-family: 'rottarity_feminine_alternatRg';
+  font-weight: lighter;
+  text-align: center;
+  font-size: 5rem;
+line-height: 4.5rem}
+.title__landing--secondary {
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.5rem;
+}
 
 /*# sourceMappingURL=main.css.map */
