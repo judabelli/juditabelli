@@ -7,11 +7,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  color: #333;
-  margin: 0;
-  padding: 0; }
-  body * {
-    box-sizing: border-box; }
+  color: #333; }
 
 h1,
 h2,
@@ -28,11 +24,7 @@ section {
   justify-content: flex-start;
   align-content: center;
   flex-wrap: wrap;
-  width: 100%;
-  padding: 20px; }
-  @media (min-width: 768px) {
-    section {
-      padding: 0; } }
+  width: 100%; }
 
 ul {
   padding-left: 0; }
@@ -45,42 +37,10 @@ a {
   color: #333;
   font-weight: bolder; }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  font-family: 'Montserrat', sans-serif;
-  color: white; }
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  font-family: 'Montserrat', sans-serif;
-  color: white; }
-
-:-ms-input-placeholder {
-  /* IE 10+ */
-  font-family: 'Montserrat', sans-serif;
-  color: white; }
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  font-family: 'Montserrat', sans-serif;
-  color: white; }
-
 .header__main {
-  z-index: 1;
-  padding: 10px;
-  position: absolute;
-  width: 100%; }
+  z-index: 1; }
   .header__main a {
-    color: #333; }
-  .header__main.sticky {
-    position: fixed;
-    background: white;
-    width: 100%;
-    top: 0;
-    left: 0;
-    Z-INDEX: 9;
-    padding-right: 10px;
-    padding-left: 10px; }
+    color: white; }
 
 .container__main {
   width: 100%;
@@ -91,6 +51,9 @@ a {
   flex-direction: column;
   justify-content: center; }
 
+.wrapper__main {
+  padding: 10px; }
+
 .title__main {
   font-family: 'rottarity_feminine_alternatRg';
   font-size: 3rem; }
@@ -100,16 +63,11 @@ a {
     display: inline-block;
     margin-right: 5px;
     color: #af005f; }
-  @media (min-width: 768px) {
-    .title__main {
-      font-size: 1.5rem;
-      line-height: inherit; } }
 
 .menu__main--wrapper {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
-  width: 100%; }
+  justify-content: flex-end; }
   @media all and (max-width: 800px) {
     .menu__main--wrapper {
       justify-content: space-around; } }
@@ -121,79 +79,35 @@ a {
   margin-left: 10px; }
 
 .site__name {
-  font-family: 'rottarity_feminine_alternatRg';
   font-size: 5rem;
-  margin-bottom: 0;
-  text-align: center;
-  color: white;
-  font-weight: 100;
-  margin-top: 0; }
-
-.cover_bk {
-  background-image: url(../img/girona-1.jpg);
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  opacity: 0.1;
-  position: absolute;
-  top: 0; }
+  margin-bottom: 0; }
 
 .cover {
-  background-image: url(../img/girona-1.jpg);
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
   color: white;
-  -webkit-clip-path: circle(24.3% at 50% 50%);
-  clip-path: circle(24.3% at 50% 50%);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0; }
-  .cover::after {
-    content: '';
-    display: block;
-    background-color: #af005f;
-    opacity: .4;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 0; }
+  align-content: flex-start;
+}
+.st0{fill:#FFFFFF;}
+.logo {
+  max-width: 350px;
+}
 
-.formulario {
-  width: 100%;
-  max-width: 500px; }
-  .formulario > * {
-    width: 100%;
-    display: block;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 8px;
-    border-color: transparent;
-    background: #333;
-    color: white; }
 
-input[type=submit] {
-  background-color: #af005f; }
-
-.member-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto; }
-
-.member {
-  flex: 1 0 0;
-  background-size: cover;
-  max-width: 300px; }
-  .member img {
-    filter: grayscale(100%);
-    max-height: 500px; }
-
-section:nth-child(even):not(:first-of-type) {
-  background-color: #333;
-  color: white; }
-
-.half {
-  width: 50%; }
+.title__landing {
+  font-family: 'rottarity_feminine_alternatRg';
+  font-weight: lighter;
+  text-align: center;
+  font-size: 5rem;
+line-height: 4.5rem}
+.title__landing--secondary {
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.5rem;
+}
 
 /*# sourceMappingURL=main.css.map */
